@@ -9,6 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Str;
 use Elastic\Elasticsearch\ClientBuilder;
+use App\Models\Audit;
 
 class InsertToElastic implements ShouldQueue
 {
@@ -27,14 +28,18 @@ class InsertToElastic implements ShouldQueue
      */
     public function handle(): void
     {
-        $params = [
-            'index' => 'audits',
-            'body'  => [ 'name' => Str::random(12)]
-        ];
-        $client = ClientBuilder::create()
-            ->setHosts(["elasticsearch:9200"])
-            ->build();
-        $client->index($params);
-        logger("test value >>>> " . $this->name);
+        // $params = [
+        //     'index' => 'audits',
+        //     'body'  => [ 'name' => Str::random(12)]
+        // ];
+        // $client = ClientBuilder::create()
+        //     ->setHosts(["elasticsearch:9200"])
+        //     ->build();
+        // $client->index($params);
+
+        $audit = Audit::create([
+            "name"=>Str::random(12)
+        ]);
+        logger("job processed >>>> " . $this->name);
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6bf78c19168912f33ade90575a6c7870",
+    "content-hash": "158a07f7526a3095c5416d4eb8e724fb",
     "packages": [
         {
             "name": "brick/math",
@@ -2518,6 +2518,74 @@
                 }
             ],
             "time": "2024-03-06T16:17:14+00:00"
+        },
+        {
+            "name": "pdphilip/elasticsearch",
+            "version": "v3.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pdphilip/laravel-elasticsearch.git",
+                "reference": "985b64a6df39b4e2db6101afe305325bf9bfb327"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pdphilip/laravel-elasticsearch/zipball/985b64a6df39b4e2db6101afe305325bf9bfb327",
+                "reference": "985b64a6df39b4e2db6101afe305325bf9bfb327",
+                "shasum": ""
+            },
+            "require": {
+                "elasticsearch/elasticsearch": "^8.12",
+                "illuminate/container": "^11.0",
+                "illuminate/database": "^11.0",
+                "illuminate/events": "^11.0",
+                "illuminate/support": "^11.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "12.0.x-dev",
+                "mockery/mockery": "^1.4.4",
+                "orchestra/testbench": "^8.0",
+                "phpunit/phpunit": "^10.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "PDPhilip\\Elasticsearch\\ElasticServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PDPhilip\\Elasticsearch\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Philip",
+                    "email": "pd.philip@gmail.com",
+                    "homepage": "https://github.com/pdphilip"
+                }
+            ],
+            "description": "An Elasticsearch implementation of Laravel's Eloquent ORM",
+            "homepage": "https://github.com/pdphilip/laravel-elasticsearch",
+            "keywords": [
+                "database",
+                "elastic",
+                "elasticsearch",
+                "eloquent",
+                "laravel",
+                "model"
+            ],
+            "support": {
+                "issues": "https://github.com/pdphilip/laravel-elasticsearch/issues",
+                "source": "https://github.com/pdphilip/laravel-elasticsearch/tree/v3.11.0"
+            },
+            "time": "2024-04-01T21:41:15+00:00"
         },
         {
             "name": "php-http/discovery",
