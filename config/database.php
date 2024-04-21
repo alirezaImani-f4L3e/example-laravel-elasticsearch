@@ -124,6 +124,11 @@ return [
                 'error_only' => true, //If false, then all queries are logged if the query_log index is set
             ],
         ],
+        'mongodb'=>[
+            'driver'=>"mongodb",
+            'dsn'=>env('MONGO_URI'),
+            'database'=>'logging'
+        ]
 
     ],
 

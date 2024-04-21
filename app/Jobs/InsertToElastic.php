@@ -10,6 +10,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Str;
 use Elastic\Elasticsearch\ClientBuilder;
 use App\Models\Audit;
+use App\Models\AuditMongo;
 
 class InsertToElastic implements ShouldQueue
 {
@@ -28,6 +29,7 @@ class InsertToElastic implements ShouldQueue
      */
     public function handle(): void
     {
+        // elasticsearch-php
         // $params = [
         //     'index' => 'audits',
         //     'body'  => [ 'name' => Str::random(12)]
@@ -37,8 +39,14 @@ class InsertToElastic implements ShouldQueue
         //     ->build();
         // $client->index($params);
 
-        $audit = Audit::create([
-            "name"=>Str::random(12)
+        // laravel-elasticsearch
+        // $audit = Audit::create([
+        //     "name"=>Str::random(12)
+        // ]);
+
+        AuditMongo::create([
+            "name"=>"alireza",
+            "age"=>23
         ]);
         logger("job processed >>>> " . $this->name);
     }
